@@ -1,0 +1,220 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Bot Reply Schema",
+    "type": "object",
+    "additionalProperties": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "oneOf": [
+                        {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string",
+                                "maxLength": 4096,
+                                "not": {
+                                    "pattern": "^[0-9]+$"
+                                }
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "maxLength": 4096,
+                            "not": {
+                                "pattern": "^[0-9]+$"
+                            }
+                        }
+                    ]
+                },
+                "buttons": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "items": {
+                        "type": "object",
+                        "required": ["payload", "title"],
+                        "properties": {
+                            "payload": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "oneOf": [
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "maxLength": 20,
+                                            "not": {
+                                                "pattern": "^[0-9]+$"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 20,
+                                        "not": {
+                                            "pattern": "^[0-9]+$"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "list": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "items": {
+                        "type": "object",
+                        "required": ["payload", "title"],
+                        "properties": {
+                            "payload": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "oneOf": [
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "maxLength": 24,
+                                            "not": {
+                                                "pattern": "^[0-9]+$"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 24,
+                                        "not": {
+                                            "pattern": "^[0-9]+$"
+                                        }
+                                    }
+                                ]
+                            },
+                            "description": {
+                                "oneOf": [
+                                    {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string",
+                                            "maxLength": 72
+                                        }
+                                    },
+                                    {
+                                        "type": "string",
+                                        "maxLength": 72
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "image": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "\\.(jpg|jpeg|png)$"
+                },
+                "imageCaption": {
+                    "oneOf": [
+                        {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string",
+                                "maxLength": 1024
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "maxLength": 1024
+                        }
+                    ]
+                },
+                "transfer": {
+                    "type": "object",
+                    "required": ["department"],
+                    "properties": {
+                        "department": {
+                            "type": "string"
+                        },
+                        "fallbackDepartment": {
+                            "type": "string"
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "properties": {
+                                "startBusinessHour": {
+                                    "type": "string",
+                                    "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+                                },
+                                "stopBusinessHour": {
+                                    "type": "string",
+                                    "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+                                },
+                                "workDays": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": ["mo", "tu", "we", "th", "fr", "sa", "su"]
+                                    }
+                                }
+                            }
+                        },
+                        "welcomeMessage": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string",
+                                        "maxLength": 4096
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "maxLength": 4096
+                                }
+                            ]
+                        }
+                    }
+                },
+                "close": {
+                    "type": "object",
+                    "properties": {
+                        "reason": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string",
+                                        "maxLength": 4096
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "maxLength": 4096
+                                }
+                            ]
+                        }
+                    }
+                },
+                "selectLanguage": {
+                    "type": "object",
+                    "required": ["language"],
+                    "properties": {
+                        "language": {
+                            "type": "string",
+                            "enum": ["ar", "en"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
