@@ -1,0 +1,3 @@
+[submodule "rocket.chat.app-easy-bot"]
+	path = rocket.chat.app-easy-bot
+	url = git@github.com:cuonghuunguyen/rocket.chat.app-easy-bot.git
