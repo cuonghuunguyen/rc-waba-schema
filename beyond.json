@@ -1,0 +1,482 @@
+{
+	"greeting": [
+
+		{"image": "https://i.postimg.cc/cJ7tyGcq/image.png"},
+		{
+			"text": {
+				"ar": "مرحبًا، $visitorName$. أهلاً بك في شركة بيوند للوساطة التأمينية. يرجى اختيار الخدمة المطلوبة.",
+				"en": "Hello, $visitorName$. Welcome to Beyond Insurance Brokerage. Please choose the needed service."
+			},
+			"list": [
+				{
+					"payload": "doctorConsultation",
+					"title": {
+						"en": "Doctor consultation",
+						"ar": "استشارة الطبيب"
+					},
+					"description": {
+						"en": "Talk to a doctor",
+						"ar": "التحدث مع طبيب"
+					}
+				},
+				{
+					"payload": "transferMedicalApprovals",
+					"title": {
+						"en": "Medical Approvals",
+						"ar": "الموافقات الطبية"
+					},
+					"description": {
+						"en": "Treatment or prescription approvals",
+						"ar": "موافقات للعلاج أو الوصفات الطبية"
+					}
+				},
+				{
+					"payload": "homeLabVisits",
+					"title": {
+						"en": "Home lab visits",
+						"ar": "زيارات منزلية للتحاليل"
+					},
+					"description": {
+						"en": "Send request for home testing",
+						"ar": "طلب زيارة منزلية للتحاليل"
+					}
+				},
+				{
+					"payload": "medicationsDelivery",
+					"title": {
+						"en": "Medications delivery",
+						"ar": "توصيل الأدوية"
+					},
+					"description": {
+						"en": "Request monthly/daily medications",
+						"ar": "طلب الأدوية اليومية أو الشهرية"
+					}
+				},
+				{
+					"payload": "medicalNetwork",
+					"title": {
+						"en": "Medical network",
+						"ar": "الشبكة الطبية"
+					},
+					"description": {
+						"en": "Check providers network",
+						"ar": "عرض شبكة مقدمي الخدمة"
+					}
+				},
+				{
+					"payload": "wellnessTips",
+					"title": {
+						"en": "Wellness Tips",
+						"ar": "النصائح الطبية"
+					},
+					"description": {
+						"en": "Health tips and guidance",
+						"ar": "نصائح طبية وإرشادات"
+					}
+				},
+				{
+					"payload": "reimbursement",
+					"title": {
+						"en": "Reimbursement",
+						"ar": "الاسترداد النقدي"
+					}
+				}
+			]
+		}
+	],
+	"selectLanguage": [
+		{
+			"text": {
+				"en": "Please select your language / يرجى اختيار لغتك",
+				"ar": "يرجى اختيار لغتك / Please select your language"
+			},
+			"buttons": [
+				{
+					"title": "English",
+					"payload": "selectLanguageEnglish"
+				},
+				{
+					"title": "العربية",
+					"payload": "selectLanguageArabic"
+				}
+			]
+		}
+	],
+	"selectLanguageEnglish": [
+		{
+			"selectLanguage": {
+				"language": "en"
+			}
+		}
+	],
+	"selectLanguageArabic": [
+		{
+			"selectLanguage": {
+				"language": "ar"
+			}
+		}
+	],
+	"wrongSelection": [
+		{
+			"text": {
+				"ar": "برجاء تحديد الخدمة المطلوبة ليتم تحويل سيادتكم و الرد من خلال القسم المختص",
+				"en": "Please choose the required service to be transferred to the concerned department and get the reply"
+			}
+		}
+	],
+	"departmentOffline": [
+		{
+			"text": {
+				"ar": "نعتذر لسيادتكم عن الرد على الاستفسار الخاص بالاسترداد النقدي في الوقت الحالي.\nبرجاء إعادة إرسال الطلب من التاسعة صباحًا إلى الخامسة مساءً من الأحد للخميس غير شامل العطلات الرسمية.",
+				"en": "We apologize, the cash reimbursement service is currently unavailable.\nPlease try again from 9 AM to 5 PM, Sunday to Thursday, excluding official holidays."
+			}
+		}
+	],
+	"technicalError": [
+		{
+			"text": {
+				"ar": "حدث خطأ فني، يرجى المحاولة مرة أخرى لاحقاً",
+				"en": "Technical error happened, please try again later. $errorMessage$"
+			}
+		}
+	],
+	"doctorConsultation": [
+		{
+			"transfer": {
+				"department": "Customer Success"
+			}
+		}
+	],
+	"homeLabVisits": [
+		{
+			"text": {
+				"en": "Thank you for contacting Beyond team. To request a home visit for lab tests, please send the medical card, a fully detailed copy of the prescription specifying the required tests, the address, and the preferred appointment time for the tests.",
+				"ar": "شكرًا لتواصلك مع فريق بيوند. لطلب زيارة منزلية لإجراء التحاليل، يرجى إرسال صورة البطاقة الطبية، نسخة مفصلة من الوصفة الطبية التي توضح التحاليل المطلوبة، العنوان، وموعد التحاليل المفضل."
+			}
+		},
+		{
+			"transfer": {
+				"department": "Customer Success"
+			}
+		}
+	],
+	"medicationsDelivery": [
+		{
+			"text": {
+				"en": "Thank you for contacting Beyond team.\n\nFor monthly medication requests, please send the medical card along with the full address details (building number, floor, and apartment) and two contact numbers.\n\nFor daily medication requests, please send the medical card, the fully detailed prescription, and the full address details (building number, floor, and apartment) along with two contact numbers.",
+				"ar": "شكرًا لتواصلك مع فريق بيوند.\n\nلطلب الأدوية الشهرية، يرجى إرسال البطاقة الطبية مع تفاصيل العنوان الكاملة (رقم المبنى، الطابق، الشقة) ورقمي تواصل.\n\nلطلب الأدوية اليومية، يرجى إرسال البطاقة الطبية، الوصفة الطبية المفصلة، وتفاصيل العنوان الكاملة (رقم المبنى، الطابق، الشقة) ورقمي تواصل."
+			}
+		},
+		{
+			"transfer": {
+				"department": "Customer Success"
+			}
+		}
+	],
+	"medicalNetwork": [
+		{
+			"text": {
+				"en": "Medical network link is attached for you.",
+				"ar": "مرفق لكم رابط الشبكة الطبية."
+			}
+		},
+		{
+			"text": {
+				"en": "https://medical-network.example.com",
+				"ar": "https://medical-network.example.com"
+			}
+		},
+		{
+			"close": {
+				"reason": {
+					"en": "Medical network link sent.",
+					"ar": "تم إرسال رابط الشبكة الطبية."
+				}
+			}
+		}
+	],
+	"wellnessTips": [
+		{
+			"text": {
+				"en": "Wellness tips link is attached for you.",
+				"ar": "مرفق لكم رابط النصائح الطبية."
+			}
+		},
+		{
+			"text": {
+				"en": "https://wellness.example.com",
+				"ar": "https://wellness.example.com"
+			}
+		},
+		{
+			"close": {
+				"reason": {
+					"en": "Wellness tips sent.",
+					"ar": "تم إرسال رابط النصائح الطبية."
+				}
+			}
+		}
+	],
+	"reimbursement": [
+		{
+			"text": {
+				"en": "Thank you for contacting Beyond team, please choose a service.",
+				"ar": "شكرًا لتواصلك مع فريق بيوند، يرجى اختيار الخدمة المطلوبة."
+			},
+			"buttons": [
+				{
+					"payload": "paperReview",
+					"title": {
+						"en": "Paper Review",
+						"ar": "مراجعة الأوراق"
+					}
+				},
+				{
+					"payload": "reimbursementFollowUp",
+					"title": {
+						"en": "Follow-up",
+						"ar": "متابعة الطلب"
+					}
+				}
+			]
+		}
+	],
+	"paperReview": [
+		{
+			"text": {
+				"en": "Please choose an insurance company.",
+				"ar": "يرجى اختيار شركة التأمين."
+			}
+		},
+		{
+			"text": "- Al Wataniya insurance\n- Allianz\n- Arope\n- AXA\n- Chubb\n- Delta\n- Egyptian Takaful - EGTAK\n- GIG Egypt Life Takaful\n- Libano Suisse\n- Metlife",
+			"list": [
+				{
+					"title": "Al Wataniya insurance",
+					"payload": "pdf-AlWataniyaInsurance"
+				},
+				{
+					"title": "Allianz",
+					"payload": "pdf-Allianz"
+				},
+				{
+					"title": "Arope",
+					"payload": "pdf-Arope"
+				},
+				{
+					"title": "AXA",
+					"payload": "pdf-Axa"
+				},
+				{
+					"title": "Chubb",
+					"payload": "pdf-Chubb"
+				},
+				{
+					"title": "Delta",
+					"payload": "pdf-Delta"
+				},
+				{
+					"title": "Egyptian Takaful - EGTA",
+					"payload": "pdf-EgyptianTakafulEgtak"
+				},
+				{
+					"title": "GIG Egypt Life Takaful",
+					"payload": "pdf-GigEgyptLifeTakaful"
+				},
+				{
+					"title": "Libano Suisse",
+					"payload": "pdf-LibanoSuisse"
+				},
+				{
+					"title": "Metlife",
+					"payload": "pdf-Metlife"
+				}
+			]
+		},
+		{
+			"text": "- Misr Insurance\n- Misr Life Insurance - Takaful\n- Misr Takaful Insurance\n- Orient\n- Royal\n- Salama Takaful Insurance\n- Sarwa Insurance\n- Sarwa Life Insurance\n- Wethaq",
+			"list": [
+				{
+					"title": "Misr Insurance",
+					"payload": "pdf-MisrInsurance"
+				},
+				{
+					"title": "Misr Life Insurance - Ta",
+					"payload": "pdf-MisrLifeInsuranceTakaful"
+				},
+				{
+					"title": "Misr Takaful Insurance",
+					"payload": "pdf-MisrTakafulInsurance"
+				},
+				{
+					"title": "Orient",
+					"payload": "pdf-Orient"
+				},
+				{
+					"title": "Royal",
+					"payload": "pdf-Royal"
+				},
+				{
+					"title": "Salama Takaful Insuranc",
+					"payload": "pdf-SalamaTakafulInsurance"
+				},
+				{
+					"title": "Sarwa Insurance",
+					"payload": "pdf-SarwaInsurance"
+				},
+				{
+					"title": "Sarwa Life Insurance",
+					"payload": "pdf-SarwaLifeInsurance"
+				},
+				{
+					"title": "Wethaq",
+					"payload": "pdf-Wethaq"
+				}
+			]
+		}
+	],
+	"reimbursementFollowUp": [
+		{
+			"text": {
+				"en": "Please choose an insurance company.",
+				"ar": "يرجى اختيار شركة التأمين."
+			},
+			"list": [
+				{
+					"title": "Axa",
+					"payload": "reimbursementFollowup-axa"
+				},
+				{
+					"title": "Metlife",
+					"payload": "reimbursementFollowup-nonAxa"
+				},
+				{
+					"title": "Globemed",
+					"payload": "reimbursementFollowup-nonAxa"
+				},
+				{
+					"title": "Next Care",
+					"payload": "reimbursementFollowup-nonAxa"
+				},
+				{
+					"title": "Mednet",
+					"payload": "reimbursementFollowup-nonAxa"
+				},
+				{
+					"title": "Medright",
+					"payload": "reimbursementFollowup-nonAxa"
+				},
+				{
+					"title": "Misr Healthcare",
+					"payload": "reimbursementFollowup-nonAxa"
+				}
+			]
+		}
+	],
+	"pdf-*": [
+		{
+			"text": {
+				"en": "Attached are the required documents for each type of reimbursement. https://odoo.beyond/pdf/$1$",
+				"ar": "مرفق المستندات المطلوبة لكل نوع من أنواع الاسترداد النقدي. https://odoo.beyond/pdf/$1$"
+			}
+		},
+		{
+			"text": {
+				"en": "Do you need to communicate with the reimbursement team?",
+				"ar": "هل تحتاج إلى التواصل مع فريق الاسترداد النقدي؟"
+			},
+			"buttons": [
+				{
+					"payload": "transferCashReimbursement",
+					"title": {
+						"en": "Yes",
+						"ar": "نعم"
+					}
+				},
+				{
+					"payload": "closeChat",
+					"title": {
+						"en": "No",
+						"ar": "لا"
+					}
+				}
+			]
+		}
+	],
+	"reimbursementFollowup-axa": [
+		{
+			"ref": "transferReimbursement"
+		}
+	],
+	"reimbursementFollowup-*": [
+		{
+			"text": {
+				"en": "Have you submitted the documents on the TPA's mobile app?",
+				"ar": "هل قمت بتقديم المستندات على تطبيق TPA للهاتف المحمول؟"
+			},
+			"buttons": [
+				{
+					"title": {
+						"en": "Yes",
+						"ar": "نعم"
+					},
+					"payload": "transferReimbursement"
+				},
+				{
+					"title": {
+						"en": "No",
+						"ar": "لا"
+					},
+					"payload": "transferReimbursement"
+				}
+			]
+		}
+	],
+	"transferReimbursement": [
+		{
+			"text": {
+				"en": "You will receive a response within one business day from 9:00 AM to 3:00 PM, Sunday to Thursday\n\nPlease send a photo of the medical card related to the requested reimbursement if it has not been sent before",
+				"ar": "سوف تتلقى الرد خلال يوم عمل واحد من الساعة 9:00 صباحًا حتى 3:00 مساءً، من الأحد إلى الخميس\n\nيرجى إرسال صورة الكارنيه الطبي المرتبط بالاسترداد المطلوب إذا لم يتم إرسالها من قبل"
+			}
+		},
+		{
+			"ref": "transferCashReimbursement"
+		}
+	],
+	"closeChat": [
+		{
+			"close": {
+				"reason": "Done"
+			}
+		}
+	],
+	"transferMedicalApprovals": [
+		{
+			"transfer": {
+				"department": "Customer Success"
+			}
+		}
+	],
+	"transferCashReimbursement": [
+		{
+			"transfer": {
+				"department": "Policy Admin",
+				"conditions": {
+					"startBusinessHour": "09:00",
+					"stopBusinessHour": "17:00",
+					"workDays": [
+						"mo",
+						"tu",
+						"we",
+						"th",
+						"su"
+					]
+				},
+				"welcomeMessage": {
+					"ar": "تم إرسال طلبكم إلى قسم الاسترداد النقدي وسيتم الرد خلال يوم عمل واحد من $startBusinessHour$ إلى $stopBusinessHour$، من الأحد إلى الخميس.\nيرجى إرسال صورة الكارنيه الطبي المرتبط بالاسترداد المطلوب إذا لم يتم إرسالها من قبل",
+					"en": "Your request has been sent to the Cash Reimbursement department and will be responded to within one business day from $startBusinessHour$ to $stopBusinessHour$, Sunday to Thursday.\nPlease send a photo of the medical card associated with the requested reimbursement if not previously sent"
+				}
+			}
+		}
+	]
+}
