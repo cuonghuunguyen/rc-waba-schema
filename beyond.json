@@ -1,13 +1,26 @@
 {
 	"greeting": [
-
-		{"image": "https://i.postimg.cc/cJ7tyGcq/image.png"},
+		{
+			"image": "https://i.postimg.cc/cJ7tyGcq/image.png"
+		},
 		{
 			"text": {
 				"ar": "مرحبًا، $visitorName$. أهلاً بك في شركة بيوند للوساطة التأمينية. يرجى اختيار الخدمة المطلوبة.",
 				"en": "Hello, $visitorName$. Welcome to Beyond Insurance Brokerage. Please choose the needed service."
 			},
 			"list": [
+				{
+					"payload": "familyMedicalInsurance",
+					"title": {
+						"en": "Family medical insurance"
+					}
+				},
+				{
+					"payload": "carInsurance",
+					"title": {
+						"en": "Car insurance"
+					}
+				},
 				{
 					"payload": "doctorConsultation",
 					"title": {
@@ -140,6 +153,38 @@
 			}
 		}
 	],
+	"familyMedicalInsurance": [
+		{
+			"text": {
+				"en": "Please fill out this form: http://form.com"
+			}
+		},
+		{
+			"text": {
+				"en": "Thank you for contacting beyond team , Kindly fill this form and You will receive a response within one business day from 9:00 AM to 5:00 PM, Sunday to Thursday",
+				"ar": "شكرا لتواصلكم مع فريق بيوند , من فضلك قم بتعبئة هذا النموذج وستتلقى رداً خلال يوم عمل واحد من الساعة 9:00 صباحاً إلى 5:00 مساءً، من الأحد إلى الخميس."
+			}
+		},
+		{
+			"ref": "transferRetail"
+		}
+	],
+	"carInsurance": [
+		{
+			"text": {
+				"en": "Please fill out this form: http://form.com"
+			}
+		},
+		{
+			"text": {
+				"en": "Thank you for contacting beyond team , Kindly fill this form and You will receive a response within one business day from 9:00 AM to 5:00 PM, Sunday to Thursday",
+				"ar": "شكرا لتواصلكم مع فريق بيوند , من فضلك قم بتعبئة هذا النموذج وستتلقى رداً خلال يوم عمل واحد من الساعة 9:00 صباحاً إلى 5:00 مساءً، من الأحد إلى الخميس."
+			}
+		},
+		{
+			"ref": "transferRetail"
+		}
+	],
 	"doctorConsultation": [
 		{
 			"transfer": {
@@ -249,87 +294,150 @@
 			}
 		},
 		{
-			"text": "- Al Wataniya insurance\n- Allianz\n- Arope\n- AXA\n- Chubb\n- Delta\n- Egyptian Takaful - EGTAK\n- GIG Egypt Life Takaful\n- Libano Suisse\n- Metlife",
+			"text": {
+				"en": "- Al Wataniya insurance\n- Allianz\n- Arope\n- AXA\n- Chubb\n- Delta\n- Egyptian Takaful - EGTAK\n- GIG Egypt Life Takaful\n- Libano Suisse\n- Metlife",
+				"ar": "- الوطنية للتأمين\n- أليانز\n- أروب\n- أكسا\n- تشاب\n- دلتا\n- التكافل المصري - إيجي تك\n- جي آي جي مصر للتكافل الحياة\n- ليبانو سويس\n- ميتلايف"
+			},
 			"list": [
 				{
-					"title": "Al Wataniya insurance",
+					"title": {
+						"en": "Al Wataniya insurance",
+						"ar": "الوطنية للتأمين"
+					},
 					"payload": "pdf-AlWataniyaInsurance"
 				},
 				{
-					"title": "Allianz",
+					"title": {
+						"en": "Allianz",
+						"ar": "أليانز"
+					},
 					"payload": "pdf-Allianz"
 				},
 				{
-					"title": "Arope",
+					"title": {
+						"en": "Arope",
+						"ar": "أروب"
+					},
 					"payload": "pdf-Arope"
 				},
 				{
-					"title": "AXA",
+					"title": {
+						"en": "AXA",
+						"ar": "أكسا"
+					},
 					"payload": "pdf-Axa"
 				},
 				{
-					"title": "Chubb",
+					"title": {
+						"en": "Chubb",
+						"ar": "تشاب"
+					},
 					"payload": "pdf-Chubb"
 				},
 				{
-					"title": "Delta",
+					"title": {
+						"en": "Delta",
+						"ar": "دلتا"
+					},
 					"payload": "pdf-Delta"
 				},
 				{
-					"title": "Egyptian Takaful - EGTA",
+					"title": {
+						"en": "Egyptian Takaful - EGTAK",
+						"ar": "التكافل المصري - إيجي تك"
+					},
 					"payload": "pdf-EgyptianTakafulEgtak"
 				},
 				{
-					"title": "GIG Egypt Life Takaful",
+					"title": {
+						"en": "GIG Egypt Life Takaful",
+						"ar": "جي آي جي مصر حياة"
+					},
 					"payload": "pdf-GigEgyptLifeTakaful"
 				},
 				{
-					"title": "Libano Suisse",
+					"title": {
+						"en": "Libano Suisse",
+						"ar": "ليبانو سويس"
+					},
 					"payload": "pdf-LibanoSuisse"
 				},
 				{
-					"title": "Metlife",
+					"title": {
+						"en": "Metlife",
+						"ar": "ميتلايف"
+					},
 					"payload": "pdf-Metlife"
 				}
 			]
 		},
 		{
-			"text": "- Misr Insurance\n- Misr Life Insurance - Takaful\n- Misr Takaful Insurance\n- Orient\n- Royal\n- Salama Takaful Insurance\n- Sarwa Insurance\n- Sarwa Life Insurance\n- Wethaq",
+			"text": {
+				"en": "- Misr Insurance\n- Misr Life Insurance - Takaful\n- Misr Takaful Insurance\n- Orient\n- Royal\n- Salama Takaful Insurance\n- Sarwa Insurance\n- Sarwa Life Insurance\n- Wethaq",
+				"ar": "- مصر للتأمين\n- مصر للتأمين الحياة - تكافل\n- مصر للتأمين التكافلي\n- أورينت\n- رويال\n- سلامة للتأمين التكافلي\n- سروة للتأمين\n- سروة للتأمين الحياة\n- وثاق"
+			},
 			"list": [
 				{
-					"title": "Misr Insurance",
+					"title": {
+						"en": "Misr Insurance",
+						"ar": "مصر للتأمين"
+					},
 					"payload": "pdf-MisrInsurance"
 				},
 				{
-					"title": "Misr Life Insurance - Ta",
+					"title": {
+						"en": "Misr Life - Takaful",
+						"ar": "مصر حياة - تكافل"
+					},
 					"payload": "pdf-MisrLifeInsuranceTakaful"
 				},
 				{
-					"title": "Misr Takaful Insurance",
+					"title": {
+						"en": "Misr Takaful Insurance",
+						"ar": "مصر للتأمين التكافلي"
+					},
 					"payload": "pdf-MisrTakafulInsurance"
 				},
 				{
-					"title": "Orient",
+					"title": {
+						"en": "Orient",
+						"ar": "أورينت"
+					},
 					"payload": "pdf-Orient"
 				},
 				{
-					"title": "Royal",
+					"title": {
+						"en": "Royal",
+						"ar": "رويال"
+					},
 					"payload": "pdf-Royal"
 				},
 				{
-					"title": "Salama Takaful Insuranc",
+					"title": {
+						"en": "Salama Takaful Insurance",
+						"ar": "سلامة للتأمين التكافلي"
+					},
 					"payload": "pdf-SalamaTakafulInsurance"
 				},
 				{
-					"title": "Sarwa Insurance",
+					"title": {
+						"en": "Sarwa Insurance",
+						"ar": "سروة للتأمين"
+					},
 					"payload": "pdf-SarwaInsurance"
 				},
 				{
-					"title": "Sarwa Life Insurance",
+					"title": {
+						"en": "Sarwa Life Insurance",
+						"ar": "سروة للتأمين الحياة"
+					},
 					"payload": "pdf-SarwaLifeInsurance"
 				},
 				{
-					"title": "Wethaq",
+					"title": {
+						"en": "Wethaq",
+						"ar": "وثاق"
+					},
 					"payload": "pdf-Wethaq"
 				}
 			]
@@ -343,32 +451,53 @@
 			},
 			"list": [
 				{
-					"title": "Axa",
+					"title": {
+						"en": "Axa",
+						"ar": "أكسا"
+					},
 					"payload": "reimbursementFollowup-axa"
 				},
 				{
-					"title": "Metlife",
-					"payload": "reimbursementFollowup-nonAxa"
+					"title": {
+						"en": "Metlife",
+						"ar": "ميتلايف"
+					},
+					"payload": "reimbursementFollowup-metlife"
 				},
 				{
-					"title": "Globemed",
-					"payload": "reimbursementFollowup-nonAxa"
+					"title": {
+						"en": "Globemed",
+						"ar": "جلوب ميد"
+					},
+					"payload": "reimbursementFollowup-globemed"
 				},
 				{
-					"title": "Next Care",
-					"payload": "reimbursementFollowup-nonAxa"
+					"title": {
+						"en": "Next Care",
+						"ar": "نيكست كير"
+					},
+					"payload": "reimbursementFollowup-nextcare"
 				},
 				{
-					"title": "Mednet",
-					"payload": "reimbursementFollowup-nonAxa"
+					"title": {
+						"en": "Mednet",
+						"ar": "ميد نت"
+					},
+					"payload": "reimbursementFollowup-mednet"
 				},
 				{
-					"title": "Medright",
-					"payload": "reimbursementFollowup-nonAxa"
+					"title": {
+						"en": "Medright",
+						"ar": "ميد رايت"
+					},
+					"payload": "reimbursementFollowup-medright"
 				},
 				{
-					"title": "Misr Healthcare",
-					"payload": "reimbursementFollowup-nonAxa"
+					"title": {
+						"en": "Misr Healthcare",
+						"ar": "مصر هيلث كير"
+					},
+					"payload": "reimbursementFollowup-misrhealthcare"
 				}
 			]
 		}
@@ -476,6 +605,13 @@
 					"ar": "تم إرسال طلبكم إلى قسم الاسترداد النقدي وسيتم الرد خلال يوم عمل واحد من $startBusinessHour$ إلى $stopBusinessHour$، من الأحد إلى الخميس.\nيرجى إرسال صورة الكارنيه الطبي المرتبط بالاسترداد المطلوب إذا لم يتم إرسالها من قبل",
 					"en": "Your request has been sent to the Cash Reimbursement department and will be responded to within one business day from $startBusinessHour$ to $stopBusinessHour$, Sunday to Thursday.\nPlease send a photo of the medical card associated with the requested reimbursement if not previously sent"
 				}
+			}
+		}
+	],
+	"transferRetail": [
+		{
+			"transfer": {
+				"department": "Policy Admin"
 			}
 		}
 	]
