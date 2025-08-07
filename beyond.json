@@ -12,13 +12,15 @@
 				{
 					"payload": "familyMedicalInsurance",
 					"title": {
-						"en": "Family medical insurance"
+						"en": "Family medical insurance",
+						"ar": "تأمين طبي عائلي"
 					}
 				},
 				{
 					"payload": "carInsurance",
 					"title": {
-						"en": "Car insurance"
+						"en": "Car insurance",
+						"ar": "تأمين السيارات"
 					}
 				},
 				{
@@ -156,7 +158,8 @@
 	"familyMedicalInsurance": [
 		{
 			"text": {
-				"en": "Please fill out this form: http://form.com"
+				"en": "Please fill out this form: https://hub.beyond-solution.com/beyond/medication-form",
+				"ar": "يرجى ملء هذا النموذج: https://hub.beyond-solution.com/beyond/medication-form-ar"
 			}
 		},
 		{
@@ -166,13 +169,16 @@
 			}
 		},
 		{
-			"ref": "transferRetail"
+			"close": {
+				"reason": "done"
+			}
 		}
 	],
 	"carInsurance": [
 		{
 			"text": {
-				"en": "Please fill out this form: http://form.com"
+				"en": "Please fill out this form: https://hub.beyond-solution.com/beyond/motor-form",
+				"ar": "يرجى ملء هذا النموذج: https://hub.beyond-solution.com/beyond/motor-form-ar"
 			}
 		},
 		{
@@ -182,7 +188,9 @@
 			}
 		},
 		{
-			"ref": "transferRetail"
+			"close": {
+				"reason": "done"
+			}
 		}
 	],
 	"doctorConsultation": [
@@ -540,8 +548,8 @@
 	"reimbursementFollowup-*": [
 		{
 			"text": {
-				"en": "Have you submitted the documents on the TPA's mobile app?",
-				"ar": "هل قمت بتقديم المستندات على تطبيق TPA للهاتف المحمول؟"
+				"en": "Have you submitted the documents on the $1$'s mobile app?",
+				"ar": "هل قمت بتقديم المستندات على تطبيق $1 للهاتف المحمول؟"
 			},
 			"buttons": [
 				{
@@ -549,16 +557,21 @@
 						"en": "Yes",
 						"ar": "نعم"
 					},
-					"payload": "transferReimbursement"
+					"payload": "transferReimbursement-submitted"
 				},
 				{
 					"title": {
 						"en": "No",
 						"ar": "لا"
 					},
-					"payload": "transferReimbursement"
+					"payload": "transferReimbursement-not-submitted"
 				}
 			]
+		}
+	],
+	"transferReimbursement-*": [
+		{
+			"ref": "transferCashReimbursement"
 		}
 	],
 	"transferReimbursement": [
@@ -592,26 +605,21 @@
 				"department": "Policy Admin",
 				"conditions": {
 					"startBusinessHour": "09:00",
-					"stopBusinessHour": "17:00",
+					"stopBusinessHour": "22:00",
 					"workDays": [
 						"mo",
 						"tu",
 						"we",
 						"th",
-						"su"
+						"su",
+						"fr",
+						"sa"
 					]
 				},
 				"welcomeMessage": {
 					"ar": "تم إرسال طلبكم إلى قسم الاسترداد النقدي وسيتم الرد خلال يوم عمل واحد من $startBusinessHour$ إلى $stopBusinessHour$، من الأحد إلى الخميس.\nيرجى إرسال صورة الكارنيه الطبي المرتبط بالاسترداد المطلوب إذا لم يتم إرسالها من قبل",
 					"en": "Your request has been sent to the Cash Reimbursement department and will be responded to within one business day from $startBusinessHour$ to $stopBusinessHour$, Sunday to Thursday.\nPlease send a photo of the medical card associated with the requested reimbursement if not previously sent"
 				}
-			}
-		}
-	],
-	"transferRetail": [
-		{
-			"transfer": {
-				"department": "Policy Admin"
 			}
 		}
 	]

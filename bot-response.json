@@ -144,9 +144,21 @@
 							}
 						},
 						"image": {
-							"type": "string",
-							"format": "uri",
-							"pattern": "\\.(jpg|jpeg|png)$"
+							"oneOf": [
+								{
+									"type": "object",
+									"additionalProperties": {
+										"type": "string",
+										"format": "uri",
+										"pattern": "\\.(jpg|jpeg|png)$"
+									}
+								},
+								{
+									"type": "string",
+									"format": "uri",
+									"pattern": "\\.(jpg|jpeg|png)$"
+								}
+							]
 						},
 						"imageCaption": {
 							"oneOf": [
