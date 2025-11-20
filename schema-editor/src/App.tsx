@@ -42,17 +42,26 @@ export default function App() {
 			const pos = nodePositions[id] || { x: 100, y: 100 };
 			
 			const nodeData = botConfig[id];
-			const isRef = !!(nodeData && typeof nodeData === 'object' && 'ref' in nodeData);
+			// Check if the node contains any ref items
+			const hasRef = Array.isArray(nodeData) && nodeData.some(item => 'ref' in item);
 			
-			// Generate preview text
+			// Generate preview text from all responses
 			let preview = id;
-			if (isRef && 'ref' in nodeData) {
-				preview = `→ ${nodeData.ref}`;
-			} else if (Array.isArray(nodeData) && nodeData.length > 0 && nodeData[0].text) {
-				const firstText = nodeData[0].text;
-				preview = typeof firstText === 'string' 
-					? firstText.substring(0, 30) 
-					: (firstText.en || Object.values(firstText)[0] || '').substring(0, 30);
+			if (Array.isArray(nodeData) && nodeData.length > 0) {
+				const previews = nodeData.map(item => {
+					if ('ref' in item) {
+						return `→ ${item.ref}`;
+					} else if ('text' in item && item.text) {
+						const text = item.text;
+						return typeof text === 'string' 
+							? text.substring(0, 30) 
+							: (text.en || Object.values(text)[0] || '').substring(0, 30);
+					}
+					return '';
+				}).filter(p => p);
+				if (previews.length > 0) {
+					preview = previews.join(' | ');
+				}
 			}
 			
 			return {
@@ -61,7 +70,7 @@ export default function App() {
 				y: pos.y,
 				data: nodeData,
 				preview,
-				isRef
+				isRef: hasRef
 			};
 		});
 	}, [botConfig, nodePositions]);
@@ -231,31 +240,42 @@ export default function App() {
 						newConfig[newId] = newConfig[oldId];
 						delete newConfig[oldId];
 
-						// Update ALL references (buttons and Ref nodes)
-						Object.keys(newConfig).forEach(key => {
-							const nodeData = newConfig[key];
-							
-							// Update Refs
-							if (nodeData && 'ref' in nodeData && nodeData.ref === oldId) {
-								newConfig[key] = { ...nodeData, ref: newId };
-								return;
-							}
-
-							// Update Standard Buttons
-							if (Array.isArray(nodeData)) {
-								newConfig[key] = nodeData.map(resp => {
-									if (!resp.buttons) return resp;
+					// Update ALL references (buttons, list items, and Ref items)
+					Object.keys(newConfig).forEach(key => {
+						const nodeData = newConfig[key];
+						
+						// Update items in the array
+						if (Array.isArray(nodeData)) {
+							newConfig[key] = nodeData.map(item => {
+								// Update Refs
+								if ('ref' in item && item.ref === oldId) {
+									return { ...item, ref: newId };
+								}
+								
+								// Update buttons in IBotResponse
+								if ('buttons' in item && item.buttons) {
 									return {
-										...resp,
-										buttons: resp.buttons.map(btn => 
+										...item,
+										buttons: item.buttons.map(btn => 
 											btn.payload === oldId ? { ...btn, payload: newId } : btn
 										)
 									};
-								});
-							}
-						});
-
-						// Update positions
+								}
+								
+								// Update list items in IBotResponse
+								if ('list' in item && item.list) {
+									return {
+										...item,
+										list: item.list.map(listItem => 
+											listItem.payload === oldId ? { ...listItem, payload: newId } : listItem
+										)
+									};
+								}
+								
+								return item;
+							});
+						}
+					});						// Update positions
 						setNodePositions(prev => ({ ...prev, [newId]: prev[oldId] }));
 						// eslint-disable-next-line @typescript-eslint/no-unused-vars
 						const { [oldId]: _, ...restPos } = nodePositions;

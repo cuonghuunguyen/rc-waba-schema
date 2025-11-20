@@ -54,7 +54,7 @@ export interface IBotResponseRef {
   ref: string;
 }
 
-export type BotNode = IBotResponse[] | IBotResponseRef;
+export type BotNode = (IBotResponse | IBotResponseRef)[];
 
 export interface BotConfig {
   greeting: IBotResponse[];

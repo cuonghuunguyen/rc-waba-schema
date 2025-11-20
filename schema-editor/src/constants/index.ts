@@ -30,5 +30,5 @@ export const INITIAL_SCHEMA: BotConfig = {
 	support: [{ text: "Connecting you to support...", transfer: { department: "CustomerService" } }],
 	sales: [{ text: "Our sales team is available 9-5.", close: { reason: "End of flow" } }],
 	// Example of a Reference Node
-	sales_redirect: { ref: "sales" }
+	sales_redirect: [{ ref: "sales" }]
 };

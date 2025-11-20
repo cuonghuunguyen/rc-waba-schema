@@ -37,11 +37,24 @@ export const ChatSimulator: React.FC<ChatSimulatorProps> = ({ config, isOpen, on
 
     const data = config[nodeId];
     if (!data) return null; // Node missing
+    if (!Array.isArray(data)) return null; // Invalid format
 
-    if (Array.isArray(data)) return data; // Found content
-    if ('ref' in data) return resolveContent(data.ref, visited); // Follow ref
+    // Filter out refs and resolve them, return only IBotResponse items
+    const responses: IBotResponse[] = [];
+    for (const item of data) {
+      if ('ref' in item) {
+        // Follow the reference
+        const refResponses = resolveContent(item.ref, visited);
+        if (refResponses) {
+          responses.push(...refResponses);
+        }
+      } else {
+        // It's a direct response
+        responses.push(item);
+      }
+    }
 
-    return null; // Invalid format
+    return responses.length > 0 ? responses : null;
   };
 
   const processNode = (nodeId: string) => {
