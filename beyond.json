@@ -1,7 +1,10 @@
 {
 	"greeting": [
 		{
-			"image": "https://i.postimg.cc/cJ7tyGcq/image.png"
+			"image": {
+				"ar": "https://i.postimg.cc/DzpyrZGX/beyond-chat-messagee-AR2-png.png",
+				"en": "https://i.postimg.cc/1tRwtfQV/beyond-chat-messagee-EN2.png"
+			}
 		},
 		{
 			"text": {
@@ -9,31 +12,6 @@
 				"en": "Hello, $visitorName$. Welcome to Beyond Insurance Brokerage. Please choose the needed service."
 			},
 			"list": [
-				{
-					"payload": "familyMedicalInsurance",
-					"title": {
-						"en": "Family medical insurance",
-						"ar": "تأمين طبي عائلي"
-					}
-				},
-				{
-					"payload": "carInsurance",
-					"title": {
-						"en": "Car insurance",
-						"ar": "تأمين السيارات"
-					}
-				},
-				{
-					"payload": "doctorConsultation",
-					"title": {
-						"en": "Doctor consultation",
-						"ar": "استشارة الطبيب"
-					},
-					"description": {
-						"en": "Talk to a doctor",
-						"ar": "التحدث مع طبيب"
-					}
-				},
 				{
 					"payload": "transferMedicalApprovals",
 					"title": {
@@ -43,17 +21,6 @@
 					"description": {
 						"en": "Treatment or prescription approvals",
 						"ar": "موافقات للعلاج أو الوصفات الطبية"
-					}
-				},
-				{
-					"payload": "homeLabVisits",
-					"title": {
-						"en": "Home lab visits",
-						"ar": "زيارات منزلية للتحاليل"
-					},
-					"description": {
-						"en": "Send request for home testing",
-						"ar": "طلب زيارة منزلية للتحاليل"
 					}
 				},
 				{
@@ -68,6 +35,17 @@
 					}
 				},
 				{
+					"payload": "homeLabVisits",
+					"title": {
+						"en": "Home lab visits",
+						"ar": "زيارات منزلية للتحاليل"
+					},
+					"description": {
+						"en": "Send request for home testing",
+						"ar": "طلب زيارة منزلية للتحاليل"
+					}
+				},
+				{
 					"payload": "medicalNetwork",
 					"title": {
 						"en": "Medical network",
@@ -76,6 +54,24 @@
 					"description": {
 						"en": "Check providers network",
 						"ar": "عرض شبكة مقدمي الخدمة"
+					}
+				},
+				{
+					"payload": "reimbursement",
+					"title": {
+						"en": "Reimbursement",
+						"ar": "الاسترداد النقدي"
+					}
+				},
+				{
+					"payload": "doctorConsultation",
+					"title": {
+						"en": "Doctor consultation",
+						"ar": "استشارة الطبيب"
+					},
+					"description": {
+						"en": "Get a medical advice",
+						"ar": "احصل على استشارة طبية"
 					}
 				},
 				{
@@ -90,10 +86,17 @@
 					}
 				},
 				{
-					"payload": "reimbursement",
+					"payload": "familyMedicalInsurance",
 					"title": {
-						"en": "Reimbursement",
-						"ar": "الاسترداد النقدي"
+						"en": "Family medical insurance",
+						"ar": "تأمين طبي عائلي"
+					}
+				},
+				{
+					"payload": "carInsurance",
+					"title": {
+						"en": "Car insurance",
+						"ar": "تأمين السيارات"
 					}
 				}
 			]
@@ -158,14 +161,8 @@
 	"familyMedicalInsurance": [
 		{
 			"text": {
-				"en": "Please fill out this form: https://hub.beyond-solution.com/beyond/medication-form",
-				"ar": "يرجى ملء هذا النموذج: https://hub.beyond-solution.com/beyond/medication-form-ar"
-			}
-		},
-		{
-			"text": {
-				"en": "Thank you for contacting beyond team , Kindly fill this form and You will receive a response within one business day from 9:00 AM to 5:00 PM, Sunday to Thursday",
-				"ar": "شكرا لتواصلكم مع فريق بيوند , من فضلك قم بتعبئة هذا النموذج وستتلقى رداً خلال يوم عمل واحد من الساعة 9:00 صباحاً إلى 5:00 مساءً، من الأحد إلى الخميس."
+				"en": "Thank you for contacting beyond team. Kindly fill out this form: https://hub.beyond-solution.com/beyond/medication-form. You will receive a response within one business day from 9:00 AM to 5:00 PM, Sunday to Thursday.",
+				"ar": "شكرا لتواصلكم مع فريق بيوند. من فضلك قم بتعبئة هذا النموذج: https://hub.beyond-solution.com/beyond/medication-form-ar وستتلقى رداً خلال يوم عمل واحد من الساعة 9:00 صباحاً إلى 5:00 مساءً، من الأحد إلى الخميس."
 			}
 		},
 		{
@@ -177,14 +174,8 @@
 	"carInsurance": [
 		{
 			"text": {
-				"en": "Please fill out this form: https://hub.beyond-solution.com/beyond/motor-form",
-				"ar": "يرجى ملء هذا النموذج: https://hub.beyond-solution.com/beyond/motor-form-ar"
-			}
-		},
-		{
-			"text": {
-				"en": "Thank you for contacting beyond team , Kindly fill this form and You will receive a response within one business day from 9:00 AM to 5:00 PM, Sunday to Thursday",
-				"ar": "شكرا لتواصلكم مع فريق بيوند , من فضلك قم بتعبئة هذا النموذج وستتلقى رداً خلال يوم عمل واحد من الساعة 9:00 صباحاً إلى 5:00 مساءً، من الأحد إلى الخميس."
+				"en": "Thank you for contacting beyond team. Kindly fill out this form: https://hub.beyond-solution.com/beyond/motor-form. You will receive a response within one business day from 9:00 AM to 5:00 PM, Sunday to Thursday.",
+				"ar": "شكرا لتواصلكم مع فريق بيوند. من فضلك قم بتعبئة هذا النموذج: https://hub.beyond-solution.com/beyond/motor-form-ar وستتلقى رداً خلال يوم عمل واحد من الساعة 9:00 صباحاً إلى 5:00 مساءً، من الأحد إلى الخميس."
 			}
 		},
 		{
@@ -229,14 +220,8 @@
 	"medicalNetwork": [
 		{
 			"text": {
-				"en": "Medical network link is attached for you.",
-				"ar": "مرفق لكم رابط الشبكة الطبية."
-			}
-		},
-		{
-			"text": {
-				"en": "https://medical-network.example.com",
-				"ar": "https://medical-network.example.com"
+				"en": "You can now easily locate the nearest service provider at any time through:\nMedical Network Link: https://medical-network-beyond.beyond-solution.com/\nOr via the Beyond Plus App: https://beyond-ib.com/beyond-plus-app/\n",
+				"ar": "يمكنك الآن العثور على أقرب مقدم خدمة لك بسهولة وسرعة في أي وقت من خلال:\nرابط الشبكة الطبية: https://medical-network-beyond.beyond-solution.com/\nأو عبر تطبيق بيوند بلس: https://beyond-ib.com/beyond-plus-app/\n"
 			}
 		},
 		{
@@ -251,14 +236,14 @@
 	"wellnessTips": [
 		{
 			"text": {
-				"en": "Wellness tips link is attached for you.",
-				"ar": "مرفق لكم رابط النصائح الطبية."
+				"en": "Download Beyond Plus app now to explore exclusive wellness tips, insurance perks, and premium healthcare services.",
+				"ar": ".حمّل تطبيق بييوند بلس الآن واستكشف نصائح طبية حصرية، ومزايا التأمين، وخدمات الرعاية الصحية المميزة"
 			}
 		},
 		{
 			"text": {
-				"en": "https://wellness.example.com",
-				"ar": "https://wellness.example.com"
+				"en": "https://play.google.com/store/apps/details?id=com.beyond_solution.live_chat",
+				"ar": "https://play.google.com/store/apps/details?id=com.beyond_solution.live_chat"
 			}
 		},
 		{
@@ -297,156 +282,29 @@
 	"paperReview": [
 		{
 			"text": {
-				"en": "Please choose an insurance company.",
-				"ar": "يرجى اختيار شركة التأمين."
+				"en": "Check out the required documents for each type of reimbursement at https://hub.beyond-solution.com/reimbursement/docs/view",
+				"ar": "يمكنك الاطلاع على المستندات المطلوبة لكل نوع من أنواع الاسترداد على https://hub.beyond-solution.com/reimbursement/docs/view/ar"
 			}
 		},
 		{
 			"text": {
-				"en": "- Al Wataniya insurance\n- Allianz\n- Arope\n- AXA\n- Chubb\n- Delta\n- Egyptian Takaful - EGTAK\n- GIG Egypt Life Takaful\n- Libano Suisse\n- Metlife",
-				"ar": "- الوطنية للتأمين\n- أليانز\n- أروب\n- أكسا\n- تشاب\n- دلتا\n- التكافل المصري - إيجي تك\n- جي آي جي مصر للتكافل الحياة\n- ليبانو سويس\n- ميتلايف"
+				"en": "Do you need to communicate with the reimbursement team?",
+				"ar": "هل تحتاج إلى التواصل مع فريق الاسترداد النقدي؟"
 			},
-			"list": [
+			"buttons": [
 				{
+					"payload": "transferCashReimbursement",
 					"title": {
-						"en": "Al Wataniya insurance",
-						"ar": "الوطنية للتأمين"
-					},
-					"payload": "pdf-AlWataniyaInsurance"
+						"en": "Yes",
+						"ar": "نعم"
+					}
 				},
 				{
+					"payload": "closeChat",
 					"title": {
-						"en": "Allianz",
-						"ar": "أليانز"
-					},
-					"payload": "pdf-Allianz"
-				},
-				{
-					"title": {
-						"en": "Arope",
-						"ar": "أروب"
-					},
-					"payload": "pdf-Arope"
-				},
-				{
-					"title": {
-						"en": "AXA",
-						"ar": "أكسا"
-					},
-					"payload": "pdf-Axa"
-				},
-				{
-					"title": {
-						"en": "Chubb",
-						"ar": "تشاب"
-					},
-					"payload": "pdf-Chubb"
-				},
-				{
-					"title": {
-						"en": "Delta",
-						"ar": "دلتا"
-					},
-					"payload": "pdf-Delta"
-				},
-				{
-					"title": {
-						"en": "Egyptian Takaful - EGTAK",
-						"ar": "التكافل المصري - إيجي تك"
-					},
-					"payload": "pdf-EgyptianTakafulEgtak"
-				},
-				{
-					"title": {
-						"en": "GIG Egypt Life Takaful",
-						"ar": "جي آي جي مصر حياة"
-					},
-					"payload": "pdf-GigEgyptLifeTakaful"
-				},
-				{
-					"title": {
-						"en": "Libano Suisse",
-						"ar": "ليبانو سويس"
-					},
-					"payload": "pdf-LibanoSuisse"
-				},
-				{
-					"title": {
-						"en": "Metlife",
-						"ar": "ميتلايف"
-					},
-					"payload": "pdf-Metlife"
-				}
-			]
-		},
-		{
-			"text": {
-				"en": "- Misr Insurance\n- Misr Life Insurance - Takaful\n- Misr Takaful Insurance\n- Orient\n- Royal\n- Salama Takaful Insurance\n- Sarwa Insurance\n- Sarwa Life Insurance\n- Wethaq",
-				"ar": "- مصر للتأمين\n- مصر للتأمين الحياة - تكافل\n- مصر للتأمين التكافلي\n- أورينت\n- رويال\n- سلامة للتأمين التكافلي\n- سروة للتأمين\n- سروة للتأمين الحياة\n- وثاق"
-			},
-			"list": [
-				{
-					"title": {
-						"en": "Misr Insurance",
-						"ar": "مصر للتأمين"
-					},
-					"payload": "pdf-MisrInsurance"
-				},
-				{
-					"title": {
-						"en": "Misr Life - Takaful",
-						"ar": "مصر حياة - تكافل"
-					},
-					"payload": "pdf-MisrLifeInsuranceTakaful"
-				},
-				{
-					"title": {
-						"en": "Misr Takaful Insurance",
-						"ar": "مصر للتأمين التكافلي"
-					},
-					"payload": "pdf-MisrTakafulInsurance"
-				},
-				{
-					"title": {
-						"en": "Orient",
-						"ar": "أورينت"
-					},
-					"payload": "pdf-Orient"
-				},
-				{
-					"title": {
-						"en": "Royal",
-						"ar": "رويال"
-					},
-					"payload": "pdf-Royal"
-				},
-				{
-					"title": {
-						"en": "Salama Takaful Insurance",
-						"ar": "سلامة للتأمين التكافلي"
-					},
-					"payload": "pdf-SalamaTakafulInsurance"
-				},
-				{
-					"title": {
-						"en": "Sarwa Insurance",
-						"ar": "سروة للتأمين"
-					},
-					"payload": "pdf-SarwaInsurance"
-				},
-				{
-					"title": {
-						"en": "Sarwa Life Insurance",
-						"ar": "سروة للتأمين الحياة"
-					},
-					"payload": "pdf-SarwaLifeInsurance"
-				},
-				{
-					"title": {
-						"en": "Wethaq",
-						"ar": "وثاق"
-					},
-					"payload": "pdf-Wethaq"
+						"en": "No",
+						"ar": "لا"
+					}
 				}
 			]
 		}
@@ -510,36 +368,6 @@
 			]
 		}
 	],
-	"pdf-*": [
-		{
-			"text": {
-				"en": "Attached are the required documents for each type of reimbursement. https://odoo.beyond/pdf/$1$",
-				"ar": "مرفق المستندات المطلوبة لكل نوع من أنواع الاسترداد النقدي. https://odoo.beyond/pdf/$1$"
-			}
-		},
-		{
-			"text": {
-				"en": "Do you need to communicate with the reimbursement team?",
-				"ar": "هل تحتاج إلى التواصل مع فريق الاسترداد النقدي؟"
-			},
-			"buttons": [
-				{
-					"payload": "transferCashReimbursement",
-					"title": {
-						"en": "Yes",
-						"ar": "نعم"
-					}
-				},
-				{
-					"payload": "closeChat",
-					"title": {
-						"en": "No",
-						"ar": "لا"
-					}
-				}
-			]
-		}
-	],
 	"reimbursementFollowup-axa": [
 		{
 			"ref": "transferReimbursement"
@@ -548,8 +376,8 @@
 	"reimbursementFollowup-*": [
 		{
 			"text": {
-				"en": "Have you submitted the documents on the $1$'s mobile app?",
-				"ar": "هل قمت بتقديم المستندات على تطبيق $1 للهاتف المحمول؟"
+				"en": "Have you submitted the documents through the insurance company’s mobile application?",
+				"ar": "هل قمت بتقديم المستندات عبر تطبيق الهاتف الخاص بشركة التأمين؟"
 			},
 			"buttons": [
 				{
@@ -571,14 +399,14 @@
 	],
 	"transferReimbursement-*": [
 		{
-			"ref": "transferCashReimbursement"
+			"ref": "transferReimbursement"
 		}
 	],
 	"transferReimbursement": [
 		{
 			"text": {
-				"en": "You will receive a response within one business day from 9:00 AM to 3:00 PM, Sunday to Thursday\n\nPlease send a photo of the medical card related to the requested reimbursement if it has not been sent before",
-				"ar": "سوف تتلقى الرد خلال يوم عمل واحد من الساعة 9:00 صباحًا حتى 3:00 مساءً، من الأحد إلى الخميس\n\nيرجى إرسال صورة الكارنيه الطبي المرتبط بالاسترداد المطلوب إذا لم يتم إرسالها من قبل"
+				"en": "Please send the full inquiry, and you will receive a response within one working day, from 9:00 AM to 5:00 PM, Sunday to Thursday.\n\nPlease send a photo of the medical card related to the requested reimbursement if it has not been sent before",
+				"ar": "يرجى إرسال صورة الكارنيه الطبي المرتبط بالاسترداد المطلوب إذا لم يتم إرسالها من قبل\n\nبرجاء ارسال الاستفسار كاملا وسوف تتلقى الرد خلال يوم عمل واحد من الساعة 9:00 صباحًا حتى 5:00 مساءً، من الأحد إلى الخميس"
 			}
 		},
 		{
