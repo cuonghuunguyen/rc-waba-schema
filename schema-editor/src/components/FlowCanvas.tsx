@@ -11,9 +11,16 @@ export const FlowCanvas: React.FC<FlowCanvasProps> = ({
   selectedNodeId 
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragNode, setDragNode] = useState<string | null>(null);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  
+  // Canvas pan and zoom state
+  const [canvasPan, setCanvasPan] = useState({ x: 0, y: 0 });
+  const [canvasZoom, setCanvasZoom] = useState(1);
+  const [isPanningCanvas, setIsPanningCanvas] = useState(false);
+  const [panStart, setPanStart] = useState({ x: 0, y: 0 });
 
   const handleMouseDown = (e: React.MouseEvent, nodeId: string) => {
     e.stopPropagation();
@@ -23,20 +30,40 @@ export const FlowCanvas: React.FC<FlowCanvasProps> = ({
     setIsDragging(true);
     setDragNode(nodeId);
     setOffset({
-      x: e.clientX - node.x,
-      y: e.clientY - node.y
+      x: e.clientX / canvasZoom - node.x,
+      y: e.clientY / canvasZoom - node.y
     });
+  };
+  
+  const handleCanvasMouseDown = (e: React.MouseEvent) => {
+    if (e.button === 0 && !isDragging) { // Left mouse button
+      setIsPanningCanvas(true);
+      setPanStart({ x: e.clientX - canvasPan.x, y: e.clientY - canvasPan.y });
+    }
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (isDragging && dragNode) {
-      onNodeMove(dragNode, e.clientX - offset.x, e.clientY - offset.y);
+      onNodeMove(dragNode, e.clientX / canvasZoom - offset.x, e.clientY / canvasZoom - offset.y);
+    } else if (isPanningCanvas) {
+      setCanvasPan({
+        x: e.clientX - panStart.x,
+        y: e.clientY - panStart.y
+      });
     }
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
     setDragNode(null);
+    setIsPanningCanvas(false);
+  };
+  
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const delta = e.deltaY * -0.001;
+    const newZoom = Math.min(Math.max(0.1, canvasZoom + delta), 3);
+    setCanvasZoom(newZoom);
   };
 
   // Draw curved bezier lines
@@ -84,28 +111,44 @@ export const FlowCanvas: React.FC<FlowCanvasProps> = ({
 
   return (
     <div
+      ref={containerRef}
       className="flex-1 bg-slate-50 relative overflow-hidden cursor-grab active:cursor-grabbing"
+      onMouseDown={handleCanvasMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
+      onWheel={handleWheel}
     >
-      <div className="absolute top-4 left-4 z-10 bg-white/80 p-2 rounded text-xs text-slate-500 pointer-events-none">
-        Drag nodes to rearrange. Click to edit. Orange lines are References.
+      <div className="absolute top-4 left-4 z-10 bg-white/90 p-3 rounded-lg text-xs text-slate-600 pointer-events-none shadow-sm border border-slate-200">
+        <div><strong>Controls:</strong></div>
+        <div>• Drag canvas to pan</div>
+        <div>• Scroll to zoom (zoom: {Math.round(canvasZoom * 100)}%)</div>
+        <div>• Drag nodes to rearrange</div>
+        <div>• Click nodes to edit</div>
       </div>
 
-      <svg ref={svgRef} className="absolute inset-0 w-full h-full pointer-events-none z-0">
-        <defs>
-          <marker id="arrowhead-std" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
-          </marker>
-          <marker id="arrowhead-ref" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#f97316" />
-          </marker>
-        </defs>
-        {connections.map(drawConnection)}
-      </svg>
+      <div 
+        style={{ 
+          transform: `translate(${canvasPan.x}px, ${canvasPan.y}px) scale(${canvasZoom})`,
+          transformOrigin: '0 0',
+          width: '10000px',
+          height: '10000px',
+          position: 'absolute'
+        }}
+      >
+        <svg ref={svgRef} width="10000" height="10000" className="absolute pointer-events-none z-0" style={{ overflow: 'visible' }}>
+          <defs>
+            <marker id="arrowhead-std" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
+            </marker>
+            <marker id="arrowhead-ref" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#f97316" />
+            </marker>
+          </defs>
+          {connections.map(drawConnection)}
+        </svg>
 
-      {nodes.map(node => (
+        {nodes.map(node => (
         <div
           key={node.id}
           onMouseDown={(e) => handleMouseDown(e, node.id)}
@@ -134,6 +177,7 @@ export const FlowCanvas: React.FC<FlowCanvasProps> = ({
           <div className="absolute top-1/2 -left-1 w-2 h-2 bg-slate-300 rounded-full"></div>
         </div>
       ))}
+      </div>
     </div>
   );
 };

@@ -13,13 +13,33 @@ export default function App() {
 	const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 	const [isSimulating, setIsSimulating] = useState(false);
 
-	// Compute nodes for canvas
+	// Compute nodes for canvas with better initial layout
 	const nodes = useMemo(() => {
-		return Object.keys(botConfig).map(id => {
-			const pos = nodePositions[id] || { x: 100 + Math.random() * 300, y: 100 + Math.random() * 300 };
-			if (!nodePositions[id]) {
-				setNodePositions(prev => ({ ...prev, [id]: pos }));
-			}
+		const nodeKeys = Object.keys(botConfig);
+		const needsInitialization = nodeKeys.some(id => !nodePositions[id]);
+		
+		if (needsInitialization) {
+			// Calculate better initial positions using a grid layout
+			const newPositions: Record<string, { x: number; y: number }> = { ...nodePositions };
+			const nodesPerRow = Math.ceil(Math.sqrt(nodeKeys.length));
+			const horizontalSpacing = 350;
+			const verticalSpacing = 200;
+			
+			nodeKeys.forEach((id, index) => {
+				if (!newPositions[id]) {
+					const row = Math.floor(index / nodesPerRow);
+					const col = index % nodesPerRow;
+					newPositions[id] = {
+						x: 100 + col * horizontalSpacing,
+						y: 100 + row * verticalSpacing
+					};
+				}
+			});
+			setNodePositions(newPositions);
+		}
+		
+		return nodeKeys.map(id => {
+			const pos = nodePositions[id] || { x: 100, y: 100 };
 			
 			const nodeData = botConfig[id];
 			const isRef = !!(nodeData && typeof nodeData === 'object' && 'ref' in nodeData);
